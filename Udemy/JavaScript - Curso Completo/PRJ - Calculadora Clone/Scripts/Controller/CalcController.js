@@ -115,7 +115,7 @@ class CalcController {
 
                 let textBtn = btn.className.baseVal.replace("btn-","");
 
-                this.execBtn();
+                this.execBtn(); 
     
             });
 
