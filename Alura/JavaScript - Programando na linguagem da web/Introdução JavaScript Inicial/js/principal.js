@@ -1,3 +1,18 @@
-var titulo = document.querySelector(".titulo");
+var paciente = document.querySelector("#primeiro-paciente");
 
-titulo.textContent = "aChurch";
+var tdPeso = paciente.querySelector(".info-peso");
+var peso = tdPeso.textContent;
+
+var tdAltura = paciente.querySelector(".info-altura");
+var altura = tdAltura.textContent;
+
+var tdImc = paciente.querySelector(".info-imc");
+
+
+if(peso < 0){
+    console.log("Peso Inválido!");
+
+}
+
+var imc = peso / (altura * altura);
+tdImc.textContent = imc;
