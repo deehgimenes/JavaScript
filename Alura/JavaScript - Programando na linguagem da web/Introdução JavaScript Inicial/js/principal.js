@@ -64,3 +64,5 @@ botaoAdicionar.addEventListener("click", function(event){
     console.log(peso);
     console.log(gordura);
 });
+
+//Verificar o erro que está ocorrendo para a VARIÁVEL botaoAdicionar.
