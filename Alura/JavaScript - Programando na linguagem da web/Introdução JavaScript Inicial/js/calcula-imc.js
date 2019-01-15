@@ -51,3 +51,10 @@ function calculaImc(peso,altura){
     imc = peso / (altura * altura);
     return imc.toFixed(2);
 }
+
+function percyJackson(pagina,nota){
+    var livro = 0;
+    livro = pagina / (nota * nota);
+    return livro.toFixed(2);
+
+}
