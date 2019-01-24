@@ -64,5 +64,12 @@ function aIncendiaria(pagina, nota){
     var livro = 0;
     livro = pagina / (nota * nota);
     return livro.toFixed(2);
-    
+
+    }
+
+function library(pagina, nota){
+    var livro = 0;
+    livro = pagina / (nota * nota);
+    return livro.toFixed(2);
+
     }
