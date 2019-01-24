@@ -73,3 +73,10 @@ function library(pagina, nota){
     return livro.toFixed(2);
 
     }
+
+function ruffGhanorTres(pagina, nota){
+    var livro = 0;
+    livro = pagina / (nota * nota);
+    return livro.toFixed(2);
+
+}
