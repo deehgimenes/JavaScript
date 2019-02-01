@@ -140,3 +140,8 @@ button[disabled=disabled], button:disabled {
 .altura-invalida{
 	background-color: lightpink;
 }
+
+#mensagem-erro{
+	color: red;
+	font-weight: bold;
+}

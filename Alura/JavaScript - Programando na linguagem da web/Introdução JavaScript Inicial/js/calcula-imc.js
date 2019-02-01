@@ -25,16 +25,16 @@ for(var i = 0; i < pacientes.length; i++){
 
     var tdImc = paciente.querySelector(".info-imc");
 
-    var pesoValido = true;
-    var alturaValida = true;
+    var pesoValido = validaPeso(peso);
+    var alturaValida = validaAltura(altura);
     
-    if(peso <= 0 || peso >= 1000){
+    if(!pesoValido){
         pesoValido = false;
         tdImc.textContent = "Peso Inválido";
         paciente.classList.add("peso-invalido");
     }
 
-    if(altura <= 0 || altura >= 3.00){
+    if(!alturaValida){
         alturaValida = false;
         tdImc.textContent = "Altura Inválido";
         paciente.classList.add("altura-invalida");
@@ -46,37 +46,26 @@ for(var i = 0; i < pacientes.length; i++){
     }
 }
 
+function validaPeso(peso){
+    if(peso >= 0 && peso < 1000){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function validaAltura(altura){
+    if(altura >= 0 && altura <= 3.0){
+        return true;
+    }else{
+        return false;
+    }
+
+}
+
 function calculaImc(peso,altura){
     var imc = 0;
     imc = peso / (altura * altura);
 
     return imc.toFixed(2);
-}
-
-function percyJackson(pagina,nota){
-    var livro = 0;
-    livro = pagina / (nota * nota);
-    return livro.toFixed(2);
-
-}
-
-function aIncendiaria(pagina, nota){
-    var livro = 0;
-    livro = pagina / (nota * nota);
-    return livro.toFixed(2);
-
-    }
-
-function library(pagina, nota){
-    var livro = 0;
-    livro = pagina / (nota * nota);
-    return livro.toFixed(2);
-
-    }
-
-function ruffGhanorTres(pagina, nota){
-    var livro = 0;
-    livro = pagina / (nota * nota);
-    return livro.toFixed(2);
-
 }
