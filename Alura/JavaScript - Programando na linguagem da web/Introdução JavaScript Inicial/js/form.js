@@ -20,15 +20,22 @@ botaoAdicionar.addEventListener("click", function(event){
         return;
     }
 
-    var tabela = document.querySelector("#tabela-pacientes");
-
-    tabela.appendChild(pacienteTr);
+    adicionaPacienteNaTabela(paciente);
 
     form.reset();
+    var mensagensErro = document.querySelector("#mensagem-erro");
+    mensagensErro.innerHTML = "";
 });
+
+function adicionaPacienteNaTabela(paciente){
+    var pacienteTr = montaTr(paciente);
+    var tabela = document.querySelector("#tabela-pacientes");
+    tabela.appendChild(pacienteTr);
+}
 
 function exibeMensagemDeErro(erros){
     var ul = document.querySelector("#mensagem-erro");
+    ul.innerHTML = ""
     erros.forEach(function(erro){
         var li = document.createElement("li");
         li.textContent = erro;
@@ -74,12 +81,28 @@ function validaPaciente(paciente){
 
     var erros = [];
 
-    if(!validaPeso(paciente.peso)){
+        if(!validaPeso(paciente.peso)){
         erros.push("Peso é Inválido");
     }
 
     if(!validaAltura(paciente.altura)){
         erros.push("Altura é Inválida");
+    }
+
+    if(paciente.nome.length == 0){
+        erros.push("O campo NOME não foi preenchido!");
+    }
+
+    if(paciente.gordura.length == 0){
+        erros.push("O campo GORDURA não foi preenchido!");
+    }
+
+    if(paciente.altura.length == 0){
+        erros.push("O campo ALTURA não foi preenchido!");
+    }
+
+    if(paciente.peso.length ==0){
+        erros.push("O campo PESO não foi preenchido!");
     }
 
     return erros;
